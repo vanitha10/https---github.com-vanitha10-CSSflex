@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS GRID</title>
+
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-gap: 10px;
+            min-height: 100vh;
+            justify-content: center;
+        }
+        h2 {
+            margin-left: 30px;
+            color: #1d1e5e;
+            text-transform:none;
+        }
+        .green {
+            background: #2d6d2d;
+            grid-column: 1 / -1 ;
+            border-radius: 10px;
+        }
+        .yellow{
+            background: #c5b158;
+            grid-column: 1 / 2;
+            border-radius: 10px;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: 120px 120px;
+            grid-gap: 10px;
+            align-items: center;
+            justify-content: center;
+            justify-content: center;
+            border-radius: 10px;
+        }
+        .box {
+            background-color: rgb(173, 126, 126);
+            font-size:xx-small;
+            border-radius: 5px;
+           
+        }
+        .red {
+            background: #fc9090;
+            border-radius: 20px;
+        }
+        .blue {
+            background: #77c2ff;
+            grid-column: 3 / -1;
+            grid-row: 2 / 4;
+            border-radius: 20px;
+        }
+        .orange {
+            background: rgb(245, 141, 81);
+            grid-column: 1 / -2;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="green"> <h2>Welcome To King College of Engineering</h2></div>
+
+        <div class="yellow">
+            <h2>Departments Offered</h2>
+            <div class="grid-container">
+                <div class="box"><h2>Information Technology</h2></div>
+                <div class="box"><h2>Electronics Engineering</h2></div>
+                <div class="box"><h2>Mechanical Engineering</h2></div>
+                <div class="box"><h2>Chemical Engineering</h2></div>
+            </div>
+        </div>
+
+        <div class="red">
+            <h2>Playground Gallery</h2>
+            <div class="grid-container">
+                <div class="box"><h2>Sports</h2></div>
+                <div class="box"><h2>Culturals</h2></div>
+                <div class="box"><h2>Dance acedemy</h2></div>
+                <div class="box"><h2>Music</h2></div>
+            </div>
+        </div>
+        <div class="blue">
+            <h2>Events happening </h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus, commodi necessitatibus, similique, quidem voluptas provident itaque ad nemo doloribus numquam debitis unde. Animi enim a harum quae ea temporibus ullam.</p>
+        </div>
+
+        <div class="orange">
+            <h2>Current Webinar</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil placeat libero, dolorem aut eos accusantium itaque temporibus dignissimos dolore commodi rerum reiciendis unde quidem explicabo!</p>
+        </div>
+</div>
+      <section>
+            
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil placeat libero, dolorem aut eos accusantium itaque temporibus dignissimos dolore commodi rerum reiciendis unde quidem explicabo!</p>
+      </section>
+
+</body>
+</html>
