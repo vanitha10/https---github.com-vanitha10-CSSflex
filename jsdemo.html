@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  
+ 
+Username: <input type="uname" id="uname" value="">
+
+
+Password: <input type="password" id="myPsw" value="mypwd345">
+
+<p>Click the button to display the password of the password field.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+
+
+<script>
+
+
+
+function myFunction() {
+  var x = document.getElementById("myPsw").value;
+  document.getElementById("demo").innerHTML = x;
+}
+
+
+
+console.log("Executing Script from within the HTML ....");
+function changeColor(){
+    alert('button clicked');
+
+
+    var name=document.getElementById("uname").value;
+
+    var name=document.getElementById("myPsw").value;
+document.body.style.backgroundColor="cyan";
+document.getElementById("txtid").innerHTML ="After Button Clicked";
+
+if(name=="" || password ==''){
+
+    alert("I am an alert box!");
+}
+
+if (confirm("Press a button!")) {
+  txt = "You pressed OK!";
+} else {
+  txt = "You pressed Cancel!";
+}
+function myFunction() {
+  var txt;
+  if (confirm("Press a button!")) {
+    txt = "You pressed OK!";
+  } else {
+    txt = "You pressed Cancel!";
+  }
+  document.getElementById("demo").innerHTML = txt;
+}
+
+
+
+</script>
+
+
+</body>
+</html>
