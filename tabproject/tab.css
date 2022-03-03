@@ -1,0 +1,77 @@
+<style>
+        body {
+            background: #2C2C2C;
+            color: #fff;
+            overflow-x: hidden; /* avoid horizontal scroll */
+          }
+          
+          .centerThings {
+            text-align: center;
+          }
+          
+          .tabs {
+            
+            margin: 0 auto;
+            width: 80%; /* width of the whole tabs section */
+            border: 1px solid #fff; /* border of the whole tabs section */
+            color: #000; /* color of the text in each tab card */
+            display: flex;
+            flex-wrap: wrap;
+          
+          }
+          .tabs label {
+            order: 1; /* Put labels first */
+            display: block;
+            padding: 1rem 2rem;
+            margin-right: 0.2rem;
+            cursor: pointer;
+            background: #acb3df;
+            font-weight: bold;
+            transition: background ease 0.3s;
+          }
+          
+          .tabs label:hover {
+            background: #8597FF;
+          }
+          
+          .tabs .tab {
+            order: 99; /* Put tabs last*/
+            flex-grow: 1;
+            width: 100%;
+            min-height: 350px; /* minimum height of the tab content */
+            display: block; /* HIDES unselected tab content with "none" */
+            position: absolute;
+            right: -9999px; /* move everything to the right to hide the content (not selected) */
+            padding: 1rem;
+            background: transparent; /* color of tab content */
+            color: #fff;
+            
+          }
+          
+          .tabs input[type="radio"] {
+            display: none; /* hides circles of radio style */
+          }
+          
+          .tabs input[type="radio"]:checked + label {
+            background: #fff; /* color of selected tab */
+          }
+          
+          .tabs input[type="radio"]:checked + label + .tab {
+            display: block; /* SHOWS selected tab */
+            position: relative;
+            right: 0px;
+            transition: .3s ease;
+          }
+          
+          @media (max-width: 45em) {
+            .tabs .tab,
+            .tabs label {
+              order: initial;
+            }
+            .tabs label {
+              width: 100%;
+              margin-right: 0;
+              margin-top: 0.2rem;
+            }
+          }
+    </style>

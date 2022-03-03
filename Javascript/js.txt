@@ -1,0 +1,10 @@
+ <script>
+
+alert("hey there")
+        console.log("hey there......")
+
+
+        document.write("hey there")
+
+        document.quesrySelectorAll("h2").innerText="hey there.."
+    </script>
