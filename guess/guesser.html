@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+    body {
+        background: hsl(231, 38%, 40%);
+    }
+    #container{
+        margin: auto;
+        font-size:30px;
+        padding:10px;
+        text-align:center;
+        height:350px;
+        width: 600px;
+        box-shadow: 2px 2px 2px 2px #0000002f;
+        background: rgb(209, 101, 101);
+        color: #1b2041;
+        border-radius: 10px;
+    }
+    button {
+        background: #1b2041;
+        color: white;
+        padding: 8px 12px;
+        border-radius: 5px;
+    }
+    #userInput{
+        width:150px;
+        height:20px;
+    }
+
+</style>
+</head>
+
+<body>
+    
+    <div id="container">
+        <p>Guess a number between 1 and 10</p>
+        <input id="userInput">
+        <button id="enterButton">Check</button>
+        
+        <p id ="outputText"> </p>
+        <button id="againButton">Play again </button>
+    </div>
+
+
+<script>
+       
+        let enterButton = document.getElementById('enterButton');
+        let againButton=document.getElementById('againButton');
+        let output = document.getElementById('outputText');
+
+        let randomNumber= Math.ceil(Math.random()*10);
+      
+        let guessesAvailable = 3
+
+       
+        function checkNumber()
+        {
+           
+            let input = document.getElementById('userInput').value;
+
+            if(input == randomNumber){
+                output.innerHTML= `Great!! it was ${randomNumber}`;
+                output.style.color = "green";
+        }
+        
+        else if (input != randomNumber)
+        {
+           
+            guessesAvailable -= 1
+
+            output.innerHTML = `Not Really! Give it another try... 
+                                <br>
+                                you have ${guessesAvailable} guesses left`;
+            
+
+        }
+    }
+        enterButton.addEventListener('click', function(){
+          
+            if(guessesAvailable>0){
+                checkNumber();
+            }
+          
+            else{
+                output.innerHTML = `Oops!! you have no attempts left, Game Over..`
+            }
+        });
+
+        againButton.addEventListener('click', function(){
+
+            location.reload();
+
+        })
+
+</script>
+
+
+
+
+
+</body>
+</html>

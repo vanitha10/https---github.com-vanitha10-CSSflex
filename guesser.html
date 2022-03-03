@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+    body {
+        background: hsl(231, 100%, 96%);
+    }
+    #container{
+        margin: auto;
+        font-size:30px;
+        padding:10px;
+        text-align:center;
+        height:350px;
+        width: 600px;
+        box-shadow: 2px 2px 2px 2px #0000002f;
+        background: white;
+        color: #1b2041;
+        border-radius: 10px;
+    }
+    button {
+        background: #1b2041;
+        color: white;
+        padding: 8px 12px;
+        border-radius: 5px;
+    }
+    #userInput{
+        width:150px;
+        height:20px;
+    }
+
+</style>
+</head>
+
+<body>
+    
+    <div id="container">
+        <p>Guess a number between 1 and 10</p>
+        <input id="userInput">
+        <button id="enterButton">Check</button>
+        
+        <p id ="outputText"> </p>
+        <button id="againButton">Play again </button>
+    </div>
+
+
+<script>
+        // getting elements fron DOM
+        let enterButton = document.getElementById('enterButton');
+        let againButton=document.getElementById('againButton');
+        let output = document.getElementById('outputText');
+
+        // Genetating a random number between 1 to 10
+        let randomNumber= Math.ceil(Math.random()*10);
+        // no of attempts available
+        let guessesAvailable = 3
+
+        // checking the user guess is same as random number
+        function checkNumber()
+        {
+            // getting user input entered 
+            let input = document.getElementById('userInput').value;
+
+            // if user guess is same as random number he/she wins
+            if(input == randomNumber){
+                output.innerHTML= `Great!! it was ${randomNumber}`;
+                output.style.color = "green";
+        }
+        // if user guess if wrong
+        else if (input != randomNumber)
+        {
+            // if it is a wrong guess decrease the no of guesses available
+            guessesAvailable -= 1
+
+            output.innerHTML = `Not Really! Give it another try... 
+                                <br>
+                                you have ${guessesAvailable} guesses left`;
+            
+
+        }
+    }
+        // on clicking check button run this function to check available guesses
+        enterButton.addEventListener('click', function(){
+            // if there are guesses availble run checknum function
+            if(guessesAvailable>0){
+                checkNumber();
+            }
+            // if no available guesses GameOVER!!
+            else{
+                output.innerHTML = `Oops!! you have no attempts left, Game Over..`
+            }
+        });
+
+        againButton.addEventListener('click', function(){
+
+            location.reload();
+
+        })
+
+</script>
+
+
+
+
+
+</body>
+</html>
