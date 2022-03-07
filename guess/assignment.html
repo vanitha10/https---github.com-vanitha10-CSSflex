@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Hours worked</title>
+
+    <style>
+        body {
+            background: hsl(231, 64%, 70%);
+          
+        }
+        #container{
+            margin: auto;
+            font-size:30px;
+            padding:10px;
+            text-align:center;
+            height:350px;
+            width: 600px;
+            box-shadow: 2px 2px 2px 2px #0000002f;
+            background: rgb(209, 101, 101);
+            color: #1b2041;
+            border-radius: 10px;
+
+           
+        }
+        button {
+            background: #1b2041;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 5px;
+        }
+       
+    
+    
+    </style>
+
+</head>
+<body>
+<div class="container">
+    <form action="#" >
+        <label for="name">Name</label>
+        <input type="text" required name="name" id="name">
+        <br>
+
+        <label for="empid">EMP Id</label>
+        <input type="text" required name="empid" id="empid">
+        <br>
+
+        <label for="date">Join Date</label>
+        <input type="date" required name="date" id="date">
+        <br>
+
+        <label for="hours">Hours Worked</label>
+        <input type="text" required name="hours" id="hours">
+        <br>
+
+        <label for="designation">Designation</label>
+        <input type="text" required name="designation" id="designation">
+        <br>
+
+        <button type="submit" id="submit">Submit</button>
+    </form>
+</div>
+    <script>
+
+        const form = document.querySelector('form')
+        const result = document.querySelector('.container')
+        let salary;
+
+        const name = document.querySelector('#name')
+        const empid = document.querySelector('#empid')
+        const date = document.querySelector('#date')
+        const hours = document.querySelector('#hours')
+        const designation = document.querySelector('#designation')
+        
+
+        let employee = {
+            name : "",
+            emp_id : "",
+            join_date : "",
+            hours_worked : "",
+            designation : "",
+        }
+
+        form.addEventListener('submit', function(e){
+                        e.preventDefault();
+
+            employee.name = name.value;
+            employee.emp_id = empid.value;
+            employee.join_date = date.value;
+            employee.hours_worked = hours.value;
+            employee.designation = designation.value.toLowerCase();
+
+            console.log(employee.name)
+
+            if (employee.designation === 'manager'){
+                salary = employee.hours_worked * 90
+            }
+            else if (employee.designation === 'consultant'){
+                salary = employee.hours_worked * 70
+            }
+            else if (employee.designation === 'trainee'){
+                salary = employee.hours_worked * 45
+            }
+            else {
+                alert("Invalid designation...")
+            }
+            
+            
+            result.innerHTML = `<h2> ${employee.name} who is a ${employee.designation} will get $${salary} </h2>`
+        })
+
+
+    </script>
+</body>
+</html>
