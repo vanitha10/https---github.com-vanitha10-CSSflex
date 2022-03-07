@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./img/img1.png" />
+  <title>Javascript Fundamentals</title>
+  <style>
+    body{
+        width: 100vw;
+        min-height: 100vh;
+        background: #e9edff;
+        /* removing default cursor */
+        cursor: none;
+    }
+    /* Style's for custom image cursor*/
+    .cursor {
+      height: 2rem;
+      width: 2rem;
+      border: 2px solid #3a55b6;
+      border-radius: 50%;
+      position: absolute;
+      z-index: 99;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+
+
+  
+
+  <!-- Image you want instead of default cursor -->
+  <img src="/img/img1.png" class="cursor">
+
+  
+  <!-- ========= Mouse Cursor Animation ====== -->
+  <script>
+  
+    // getting custom image cursor from DOM
+    const mouseCursor = document.querySelector('.cursor');
+
+    // Mousemove is a event that tracks the cursor moving..
+    window.addEventListener('mousemove', cursor);
+
+    // In the position of mouse cursor placing the custom image
+    function cursor(e){
+        mouseCursor.style.top = e.pageY + 'px';
+        mouseCursor.style.left = e.pageX + 'px';
+    }
+  </script>
+</body>
+</html>
