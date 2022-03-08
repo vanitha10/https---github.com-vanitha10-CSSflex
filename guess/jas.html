@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Assignment 3</title>
+</head>
+<body>
+<div class="container">
+    <form action="#" >
+        <label for="name">Name</label>
+        <input type="text" required name="name" id="name">
+        <br>
+
+        <label for="empid">EMP Id</label>
+        <input type="text" required name="empid" id="empid">
+        <br>
+
+        <label for="date">Join Date</label>
+        <input type="date" required name="date" id="date">
+        <br>
+
+        <label for="hours">Hours Worked</label>
+        <input type="text" required name="hours" id="hours">
+        <br>
+
+        <label for="designation">Designation</label>
+        <input type="text" required name="designation" id="designation">
+        <br>
+
+        <button type="submit" id="submit">Submit</button>
+    </form>
+</div>
+    <script>
+
+        const form = document.querySelector('form')
+        const result = document.querySelector('.container')
+        let salary;
+
+        const name = document.querySelector('#name')
+        const empid = document.querySelector('#empid')
+        const date = document.querySelector('#date')
+        const hours = document.querySelector('#hours')
+        const designation = document.querySelector('#designation')
+        
+
+        const _name = Symbol()
+        const _id = Symbol()
+        const _joinDate = Symbol()
+        const _hours = Symbol()
+        const _designation = Symbol()
+
+        class Employee {
+            constructor(name, id, joinDate, hours, desigation){
+                this[_name] = name,
+                this[_id] = id,
+                this[_joinDate] = joinDate,
+                this[_hours] = hours,
+                this[_designation] = desigation
+            }
+
+            setDetails(name, id, joinDate, hours, desigation){
+                this[_name] = name,
+                this[_id] = id,
+                this[_joinDate] = joinDate,
+                this[_hours] = hours,
+                this[_designation] = desigation
+            }
+
+            getDetails(){
+               console.log(this[_name],this[_id],this[_joinDate],this[_hours],this[_designation])
+            }
+
+            validateEmp(){
+                if(this[_designation]==="manager"){
+                    salary = this[_hours] * 90
+                }
+                else if(this[_designation]==="consultant"){
+                    salary = this[_hours] * 70
+                }
+                else if(this[_designation]==="trainee"){
+                    salary = this[_hours] * 45
+                } else {
+                    alert('Invalid Designation')
+                }
+                result.innerHTML = `<h2> ${this[_name]} who is a ${this[_designation]} will get $${salary} </h2>` 
+            }
+        }
+        
+        
+
+        form.addEventListener('submit', function(e){
+            e.preventDefault();
+
+            const emp = new Employee()
+            emp.setDetails(name.value, empid.value, date.value, hours.value, designation.value)
+            emp.getDetails()
+            emp.validateEmp()
+
+        })
+
+
+    </script>
+</body>
+</html>
