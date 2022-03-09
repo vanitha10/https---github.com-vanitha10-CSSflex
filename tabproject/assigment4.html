@@ -37,12 +37,20 @@
           let stock = sale.stock
           let price = sale.original
 
-          let total = stock * price
+        /*   let total = stock * price */
+          
+          if(sale.discount){
+              let discount_price=(sale.discount*sale.original)
+              console.log(discount_price)
+              total=(stock*price)-discount_price
+          }
+          else {
+              total=stock*price 
+          }
 
           sale['total'] = total
 
           console.log(sale);
-
 
          salesList.innerHTML += `
           <li>Name:   ${sale.name}  Stock: ${sale.stock}  Original: $${sale.original}    Total: $${sale.total}</li>
