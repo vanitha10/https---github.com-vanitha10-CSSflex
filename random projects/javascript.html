@@ -1,3 +1,4 @@
+   
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,37 +6,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
 </head>
 <body>
-<!-- <img id="flower"  src="/img/img1.png" style="width: 200px; height : 130px;">
 
 
-<button onclick="sample()">Submit  </button> -->
+    <script>
 
-<h1>Javascript Variables </h1>
+        const colorArr = ["red", "yellow", "blue", "green", "white", "black"];
+        
+        const [first, second,third] = colorArr;
+        console.log(first,second,third);
+        
 
-<script type="text/javascript">
+        const edibles = ["food", "fruits"];
 
-var a=10;
-let b=20;
-const c="";
+let [positionOne, positionTwo] = edibles;
+const temp = positionOne;
 
-b=50;
-v=100;
+positionOne = positionTwo;
+positionTwo = temp;
+console.log(positionOne, positionTwo);
 
-//document.write(c);
-console.log();
-/*     function sample()
-    {
-       
-        document.getElementById('flower').src="/img/img2.png";
-    } */
-   
-    <script"> a = 5 + "9"; document.write(a); </script> *
+const freeCodeCamp = {
+  frontend: "React",
+  backend: "Node",
+  database: "MongoDB",
+};
 
-
-
- 
+const { frontend, backend } = freeCodeCamp;
+console.log(frontend, backend);
+               
+        </script>
+    
 </body>
 </html>

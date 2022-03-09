@@ -1,54 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+	<title>Arrays!!!</title>
+
+
+	<script type="text/javascript">
+
+
+		const sales = new Array("PS4", "Xbox one", "Nintendo", "Ps2 console", "Nintendo Switch");
+
+
+		Array.prototype.displayItems=function()
+    {
+			for (i=0;i<this.length;i++){
+				document.write(this[i] + "<br />");
+			}
+		}	
+		document.write("sales <br />");
+
+	sales.displayItems();
+		document.write("<br />The number of items in students array is " + sales.length + "<br />");
+		document.write("<br />The SORTED students array<br />");
+
+
+	sales.sort();
+		sales.displayItems();
+		document.write("<br />The REVERSED students array<br />");
+
+
+		sales.reverse();
+		sales.displayItems();
+		document.write("<br />THE students array after REMOVING the LAST item<br />");
+
+
+		sales.pop();
+		sales.displayItems();
+        document.write("<br />THE students array after PUSH<br />");
+        sales.push("New Stuff");
+		sales.displayItems();
+
+	</script>
 </head>
 <body>
-<form action="">
-
-
-
-    <label for="name"> Name:</label>
-
-
-    <input type="text" name ="name" id="name">
-
-    <label for="empid"> EmpID</label>
-
-
-    <input type="text" name ="Emp Id " id="empid">
-
-
-    <label for="date"> Joining Date</label>
-
-
-    <input type="date" name ="date" id="fname">
-    <label for="fname"> Name:</label>
-
-
-    <input type="text" name ="firstname" id="fname">
-    <label for="fname"> Hours worked :</label>
-
-
-    <input type="text" name ="firstname" id="fname">
-    <label for="fname"> Designation:</label>
-
-
-    <input type="text" name ="firstname" id="fname">
-
-    <button type="submit"> Submit</button>
-</form>
-
-
-
-
-
-
-
-
-    
 </body>
 </html>

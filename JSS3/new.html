@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Array Methods</h2> 
+
+
+<p>It this example we have used as a separator between the elements:</p>
+<p id="demo"></p>
+
+<script>
+let sales= [{
+    name:"Ps2", stock:2,original:299.99,
+    name:"xbox", stock:3 ,original:399.99,
+     name:"Ninendo", stock:1 ,original:399.99
+     
+}
+
+];
+sales.forEach((item,index,array)=>
+{
+    
+    console.log(item,index);
+
+});
+
+
+
+/* 
+let sales1=[];
+
+for (let i = 0; i < sales.length; i++) {
+       sales1[i]=sales[i]+1;
+/*     }
+
+  return sales1; */
+
+/* document.getElementById("demo").innerHTML=sales.length; */
+ 
+
+
+
+/* 
+const res= sales.find(findxbox); */
+
+/* function findxbox(sales)
+{
+
+    return sales.name==="xbox";
+}
+ */
+
+
+
+
+</script>
+
+</body>
+</html>
+

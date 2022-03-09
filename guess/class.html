@@ -8,7 +8,7 @@
 
     <style>
         body {
-            background: hsl(231, 64%, 70%);
+            background: hsl(231, 42%, 78%);
           
         }
         #container{
@@ -65,50 +65,31 @@
 </div>
     <script>
 
-        const form = document.querySelector('form')
-        const result = document.querySelector('.container')
-        let salary;
+class employee{
 
-        const name = document.querySelector('#name')
-        const empid = document.querySelector('#empid')
-        const date = document.querySelector('#date')
-        const hours = document.querySelector('#hours')
-        const designation = document.querySelector('#designation')
-        
+constructor(name,hours){
+    this.name = name;
+this.hours = hours;
 
-        let employee = {
-            name : "",
-            emp_id : "",
-            join_date : "",
-            hours_worked : "",
-            designation : "",
-        }
+}
+}
 
-        form.addEventListener('submit', function(e){
-                        e.preventDefault();
+const employee1 =new employee("vanitha", 20);
+       
+document.getElementById(".class").innerHTML =employee1.name + "  "+employee1.hours;
 
-            employee.name = name.value;
-            employee.emp_id = empid.value;
-            employee.join_date = date.value;
-            employee.hours_worked = hours.value;
-            employee.designation = designation.value.toLowerCase();
+/* get Manager(){ 
+return this.hours*90;
+}
+set Manager(Manager){ //setter
+this.hours=Manager/90;
+}
+}
+var employee1= new Employee(10);
 
-            console.log(employee.name)
+document.write("Vanitha who is an employee" + employee1.hours +  "is" + employee1.Manager +" ");
 
-            if (employee.designation === 'manager'){
-                salary = employee.hours_worked * 90
-            }
-            else if (employee.designation === 'consultant'){
-                salary = employee.hours_worked * 70
-            }
-            else if (employee.designation === 'trainee'){
-                salary = employee.hours_worked * 45
-            }
-            else {
-                alert("Invalid designation...")
-            }
-                        result.innerHTML = `<h2> ${employee.name} who is a ${employee.designation} will get $${salary} </h2>`
-        })
+ */
 
 
     </script>
