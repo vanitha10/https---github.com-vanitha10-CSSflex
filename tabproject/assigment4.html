@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment using Array/objects</title>
+</head>
+<body>
+    <h1>Assignment using Array/objects</h1>
+    <ul id="sales"><br>
+    </ul>
+
+
+    <script>
+        const salesList = document.querySelector("#sales")
+        const sales = [
+            {name:"PS4 Pro", stock:4,original: 399.99},
+            {name:"Xbox Pro", stock:1, discount:0.1, original: 499.9},
+            {name:"Nintendo Pro", stock:4, original: 299.9},
+            {name:"Ps2 Console", stock:1, original: 299.9, discount:0.8},
+            {name:"Nintendo 64", stock:1, original: 299.9, discount:0.65},
+        ]
+
+      /*  for(let i=0; i<= sales.length; i++){
+            console.log(sales[i])
+        }
+
+        let x = 0;
+
+        while(x<sales.length){
+            console.log(sales[x])
+            x++;
+        }
+ */
+        sales.forEach(function(sale){
+          let stock = sale.stock
+          let price = sale.original
+
+          let total = stock * price
+
+          sale['total'] = total
+
+          console.log(sale);
+
+
+         salesList.innerHTML += `
+          <li>Name:   ${sale.name}  Stock: ${sale.stock}  Original: $${sale.original}    Total: $${sale.total}</li>
+         `
+        })
+
+    </script>
+</body>
+</html>
