@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple quiz</title>
+
+ <style>
+.container{
+
+    border:3px solid black;
+    border-radius: 10px;
+    width: 60%;
+    padding:20px;
+    display:none;
+}
+button{
+    margin-top: 10px;
+}
+
+ </style>
+
+
+</head>
+<body>
+
+    
+    <h1>Quiz Template</h1>
+
+
+
+    <div class="container">
+
+        Q1 What is 100+200?<br>
+        <input type="radio" name="question1" id="correct1"> 300<br>
+        <input type="radio" name="question1"> 400<br>
+        <input type="radio" name="question1"> 150<br>
+        <input type="radio" name="question1"> 600<br>
+
+        <button class="next" onclick="next(1)">NEXT</button>
+   </div>
+
+   <div class="container">
+
+    Q2 What is 200+300?<br>
+    <input type="radio" name="question2"> 300<br>
+    <input type="radio" name="question2"> 400<br>
+    <input type="radio" name="question2"> 150<br>
+    <input type="radio" name="question2" id="correct2"> 500<br>
+
+    <button class="next" onclick="next(2)">NEXT</button>
+</div>
+
+<div class="container">
+
+    Q3 What is 300+400?<br>
+    <input type="radio" name="question3"> 300<br>
+    <input type="radio" name="question3"> 400<br>
+    <input type="radio" name="question3" id="correct3"> 700<br>
+    <input type="radio" name="question3"> 800<br>
+
+    <button class="next" onclick="next(3)">NEXT</button>
+</div>
+
+<div class="container">
+
+    Q4 What is 400+500?<br>
+    <input type="radio" name="question4"> 300<br>
+    <input type="radio" name="question4"> 400<br>
+    <input type="radio" name="question4"> 150<br>
+    <input type="radio" name="question4" id="correct4"> 900<br>
+
+    <button class="next" onclick="next(4)">NEXT</button>
+</div>
+
+<div class="container">
+
+    Q5 What is 500+600?<br>
+    <input type="radio" name="question5"> 300<br>
+    <input type="radio" name="question5" id="correct5"> 1100<br>
+    <input type="radio" name="question5"> 150<br>
+    <input type="radio" name="question5"> 900<br>
+
+    <button class="next" onclick="next(5)">NEXT</button>
+</div>
+
+
+<div class="container">
+
+    Q6 What is 600+700?<br>
+    <input type="radio" name="question6" id="correct6"> 1300<br>
+    <input type="radio" name="question6"> 400<br>
+    <input type="radio" name="question6"> 150<br>
+    <input type="radio" name="question6"> 900<br>
+
+    <button onclick="result()">Submit</button>
+</div>
+
+
+    </div>
+    <script>
+
+document.getElementsByClassName('container')[0].style.display="block";
+
+
+function next(id){
+    document.getElementsByClassName('container')[id-1].style.display="none";
+    document.getElementsByClassName('container')[id].style.display="block";
+
+}
+
+    </script>
+</body>
+</html>
