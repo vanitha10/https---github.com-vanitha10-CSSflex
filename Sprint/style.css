@@ -23,26 +23,26 @@ body{
 
 .text-container h1{
 
-    color:rgb(192, 230, 240);
-    font-size: 50px;
+    color:rgb(170, 223, 236);
+    font-size: 30px;
     font-weight: 200;
     text-align: center;
     
 }
 .text-container h1 span{
-    font-size: 50px;
+    font-size: 30px;
     text-transform: uppercase;
     letter-spacing:2px;
 }
 .text-container .animated-text{
 
     position: relative;
-    background: #214277;
+    background: #050507;
     margin-top: 15px;
     width:320px;
     height:75px;
-    box-shadow:  0 0 100px #db66df,
-                 0 0 120px #6d8cc2;
+    box-shadow:  0 0 100px #120b13,
+                 0 0 120px #708ec7;
                  overflow: hidden;
     }
 

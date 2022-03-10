@@ -74,5 +74,12 @@ age: 30
 }
 console.log(person);
 
+functipn SyntaxError(name)
+console.log(this.greeting+' '+name);
+}
+SyntaxError.call(this,"mike")
+SyntaxError.call()
+
+
 
 
