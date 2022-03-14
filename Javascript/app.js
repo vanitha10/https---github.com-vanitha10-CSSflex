@@ -66,7 +66,7 @@ let rabbit={
 }
 }
  */
-
+/* 
 let person={
 name:'Mosh',
 age: 30
@@ -78,8 +78,15 @@ functipn SyntaxError(name)
 console.log(this.greeting+' '+name);
 }
 SyntaxError.call(this,"mike")
-SyntaxError.call()
+SyntaxError.call() */
 
 
-
-
+function range(javascript)
+{
+	var a=5;
+	for(int i=0;i<javascript;i++)
+	{
+		console.log(a);
+	} 
+}
+range(3);
